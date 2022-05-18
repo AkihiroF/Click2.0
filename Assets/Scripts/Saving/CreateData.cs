@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class CreateData : MonoBehaviour
 {
-    public DataBase data;
     public Upmenu upmenu;
     public EnterName enterName;
+    public DataBase data;
 
-    private void Start()
+    public void EnterFile()
     {
-        data = enterName.Createdatabase();
         upmenu.UpdateInfo(data);
     }
 }

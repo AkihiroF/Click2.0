@@ -9,13 +9,17 @@ using TMPro;
 public class EnterName : MonoBehaviour, IPointerClickHandler
 {
     private string nameperson;
-    DataBase data;
+    public DataBase data;
+    [SerializeField] private CreateData createdata;
     [SerializeField] private string filename;
     [SerializeField] private TextMeshProUGUI inputfield;
     [SerializeField] private GameObject InputNameMenu;
-    private void Awake()
+    private void Start()
     {
-        if (File.Exists(filename) == false){
+        if (File.Exists(Application.dataPath + "/" + filename)){
+            data = Createdatabase();
+            createdata.data = data;
+            createdata.EnterFile();
             Destroy(InputNameMenu);
         }
     }
@@ -23,7 +27,6 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
     {
         if (a.button == PointerEventData.InputButton.Left)
         {
-            data = Createdatabase();
             InputNameInfo();
         }
     }
@@ -36,9 +39,10 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
         }
         else
         {
+            data = new();
             data.namePlayer = nameperson;
             JsonSave.SaveToJSON<DataBase>(data, filename);
-            Destroy(InputNameMenu);
+            Start();
         }
     }
     public DataBase Createdatabase()
