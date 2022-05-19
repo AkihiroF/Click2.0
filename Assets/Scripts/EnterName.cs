@@ -14,10 +14,12 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
     [SerializeField] private string filename;
     [SerializeField] private TextMeshProUGUI inputfield;
     [SerializeField] private GameObject InputNameMenu;
+    [SerializeField] private List<Obj> startObj;
     private void Start()
     {
         if (File.Exists(Application.dataPath + "/" + filename)){
             data = Createdatabase();
+            createdata.filename = filename;
             createdata.data = data;
             createdata.EnterFile();
             Destroy(InputNameMenu);
@@ -41,6 +43,7 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
         {
             data = new();
             data.namePlayer = nameperson;
+            JsonSave.SaveToJSON(startObj, createdata.filenameobj);
             JsonSave.SaveToJSON<DataBase>(data, filename);
             Start();
         }
