@@ -45,12 +45,12 @@
      <Compile Include="Assets\Scripts\Saving\CreateData.cs" />
      <Compile Include="Assets\Scripts\Saving\DataBase.cs" />
      <Compile Include="Assets\Scripts\ButtOn.cs" />
+     <Compile Include="Assets\Scripts\ItemInShop.cs" />
      <Compile Include="Assets\Scripts\Saving\JsonSave.cs" />
      <Compile Include="Assets\Scripts\Obj.cs" />
      <Compile Include="Assets\Scripts\EnterName.cs" />
      <Compile Include="Assets\Scripts\MainMenuButton.cs" />
      <Compile Include="Assets\Scripts\MovingExp.cs" />
-     <Compile Include="Assets\Scripts\ItemInShop.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
