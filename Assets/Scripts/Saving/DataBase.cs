@@ -7,4 +7,5 @@ public class DataBase
 {
     public string namePlayer;
     public int money, subscribers;
+    public bool tutorial;
 }

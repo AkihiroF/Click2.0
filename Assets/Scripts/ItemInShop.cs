@@ -24,7 +24,7 @@ public class ItemInShop : MonoBehaviour
             statusicon.sprite = obj.upgradeicon[obj.stadia];
         }
         else{ obj.active = true; UpdateStartStatus(); savedata.UpdateNextStat(obj);}
-        savedata.UpdateStatus(obj);
+        savedata.UpdateStatusLoading(obj);
     }
 
     public void UpdateStartStatus()

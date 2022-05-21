@@ -15,15 +15,30 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI inputfield;
     [SerializeField] private GameObject InputNameMenu;
     [SerializeField] private List<Obj> startObj;
+    public Tutorialscr tut;
     private void Start()
     {
         if (File.Exists(Application.dataPath + "/" + filename)){
             data = Createdatabase();
             createdata.filename = filename;
             createdata.data = data;
+            createdata.objects = startObj;
             createdata.EnterFile();
+            if (createdata.data.tutorial)
+            {
+                for (int i = 0; i < tut.tutorobj.Count; i++)
+                {
+                    tut.NextPage();
+                }
+            }
+            else
+            {
+                tut.NextPage();
+                tut.NextPage();
+            }
             Destroy(InputNameMenu);
         }
+        else tut.NextPage();
     }
     public void OnPointerClick(PointerEventData a)
     {
@@ -43,9 +58,12 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
         {
             data = new();
             data.namePlayer = nameperson;
-            JsonSave.SaveToJSON(startObj, createdata.filenameobj);
             JsonSave.SaveToJSON<DataBase>(data, filename);
-            Start();
+            createdata.filename = filename;
+            createdata.data = data;
+            createdata.objects = startObj;
+            createdata.EnterFile();
+            Destroy(InputNameMenu);
         }
     }
     public DataBase Createdatabase()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CreateData : MonoBehaviour
@@ -10,32 +11,57 @@ public class CreateData : MonoBehaviour
     public DataBase data;
     public List<ItemInShop> Objinshop;
     public List<Obj> objects;
+    public List<ObjSave> savingobject;
 
     public void EnterFile()
     {
-        objects = JsonSave.ReadListFromJSON<Obj>(filenameobj);
+        
+        savingobject = JsonSave.ReadListFromJSON<ObjSave>(filenameobj);
         upmenu.UpdateInfo(data);
-        UpdateStatus();
+        UpdateStatusLoading();
     }
 
-    public void UpdateStatus(Obj obj)
+    public void UpdateStatusLoading(Obj obj)
     {
         for (int i = 0; i < Objinshop.Count; i++)
         {
-            if (objects[i] == obj)
+            if (objects[i].id == obj.id)
             {
                 objects[i] = obj;
             }
         }
-        JsonSave.SaveToJSON(objects,filenameobj);
+        UpdateStatusSaving();
+        JsonSave.SaveToJSON(savingobject,filenameobj);
     }
 
-    public void UpdateStatus()
+    public void UpdateStatusLoading()
     {
         for (int i = 0; i < Objinshop.Count; i++)
         {
+            if (savingobject.Count != 0)
+            {
+                objects[i].active = savingobject[i].active;
+                objects[i].buy = savingobject[i].active;
+                objects[i].lvl = savingobject[i].lvl;
+                objects[i].stadia = savingobject[i].stadia;
+                UpdateNextStat(objects[i]);
+            }
             Objinshop[i].obj = objects[i];
             Objinshop[i].UpdateStartStatus();
+        }
+    }
+
+    public void UpdateStatusSaving()
+    {
+        savingobject.Clear();
+        for (int i = 0; i < objects.Count; i++)
+        {
+            ObjSave save = new();
+            save.active = objects[i].active;
+            save.buy = objects[i].buy;
+            save.lvl = objects[i].lvl;
+            save.stadia = objects[i].stadia;
+            savingobject.Add(save);
         }
     }
 
@@ -43,7 +69,7 @@ public class CreateData : MonoBehaviour
     {
         for (int i = 0; i < Objinshop.Count-1; i++)
         {
-            if (Objinshop[i].obj == obj)
+            if (Objinshop[i].obj.active)
             {
                 Objinshop[i + 1].obj.buy = true;
                 Objinshop[i + 1].UpdateStartStatus();
