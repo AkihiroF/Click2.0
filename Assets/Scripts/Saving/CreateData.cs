@@ -48,6 +48,7 @@ public class CreateData : MonoBehaviour
             }
             Objinshop[i].obj = objects[i];
             Objinshop[i].UpdateStartStatus();
+            Objinshop[i].objinroom.UpdateStatusObj();
         }
     }
 

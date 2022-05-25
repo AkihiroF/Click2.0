@@ -50,7 +50,7 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
    public void InputNameInfo()
     {
         nameperson = inputfield.text;
-        if (nameperson == null && nameperson == "" && nameperson == " ")
+        if (nameperson.Length < 3)
         {
             inputfield.text = "";
         }

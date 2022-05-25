@@ -8,7 +8,7 @@ public class Obj : ScriptableObject
 {
     [SerializeField] private string nameobj;
     public List<Sprite> upgradeicon;
-    public bool active, buy;
-    public int lvl, stadia, id;
-    
+    public bool active = false, buy = false;
+    public int lvl = 0, stadia = 0, id;
+
 }

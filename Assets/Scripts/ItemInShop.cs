@@ -11,17 +11,22 @@ public class ItemInShop : MonoBehaviour
     public Image statusicon;
     public Button button;
     public GameObject block;
+    public ItemInRoom objinroom;
     public void UpdateStatus()
     {
         if (obj.active)
         {
-            obj.stadia++;
-            if (obj.stadia > 3)
+            if (obj.lvl < objinroom.maxlvl)
             {
-                obj.stadia = 0;
-                obj.lvl++;
+                obj.stadia++;
+                if (obj.stadia > 3)
+                {
+                    obj.stadia = 0;
+                    obj.lvl++;
+                    objinroom.UpdateStatusObj();
+                }
+                statusicon.sprite = obj.upgradeicon[obj.stadia];
             }
-            statusicon.sprite = obj.upgradeicon[obj.stadia];
         }
         else{ obj.active = true; UpdateStartStatus(); savedata.UpdateNextStat(obj);}
         savedata.UpdateStatusLoading(obj);
@@ -29,7 +34,7 @@ public class ItemInShop : MonoBehaviour
 
     public void UpdateStartStatus()
     {
-        if (obj.active) button.GetComponentInChildren<TextMeshProUGUI>().text = "Улучшить";
+        if (obj.active) button.GetComponentInChildren<TextMeshProUGUI>().text = "Upgrade";
         statusicon.sprite = obj.upgradeicon[obj.stadia];
         if(obj.buy) Destroy(block);
     }
