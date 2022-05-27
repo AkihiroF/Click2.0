@@ -12,13 +12,15 @@ public class ItemInRoom : MonoBehaviour
     private void Start()
     {
         srez = maxlvl / icons.Count;
+        this.gameObject.SetActive(dataobj.active);
     }
 
     public void UpdateStatusObj()
     {
+        Start();
         int ind = dataobj.lvl / srez;
         Debug.Log(ind);
-        
+        this.gameObject.SetActive(dataobj.active);
         if(ind <= icons.Count-1)this.gameObject.GetComponent<Image>().sprite = icons[ind];
     }
 }

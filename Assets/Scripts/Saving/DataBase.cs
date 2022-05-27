@@ -7,5 +7,7 @@ public class DataBase
 {
     public string namePlayer;
     public int money, subscribers;
-    public bool tutorial;
+    public bool tutorial, active;
+    public float statusprogres, realtime;
+    public int predmon, predsub;
 }

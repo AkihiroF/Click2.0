@@ -28,7 +28,7 @@ public class ItemInShop : MonoBehaviour
                 statusicon.sprite = obj.upgradeicon[obj.stadia];
             }
         }
-        else{ obj.active = true; UpdateStartStatus(); savedata.UpdateNextStat(obj);}
+        else{ obj.active = true; UpdateStartStatus(); savedata.UpdateNextStat(obj); objinroom.UpdateStatusObj();}
         savedata.UpdateStatusLoading(obj);
     }
 
@@ -36,6 +36,7 @@ public class ItemInShop : MonoBehaviour
     {
         if (obj.active) button.GetComponentInChildren<TextMeshProUGUI>().text = "Upgrade";
         statusicon.sprite = obj.upgradeicon[obj.stadia];
+        objinroom.UpdateStatusObj();
         if(obj.buy) Destroy(block);
     }
 }

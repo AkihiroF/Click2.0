@@ -21,5 +21,5 @@ MonoBehaviour:
   active: 1
   buy: 1
   lvl: 4
-  stadia: 2
-  id: 5
+  stadia: 0
+  id: 1
