@@ -18,6 +18,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obj.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Saving/ObjSave.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TyanInteract.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/VideoMenu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -88,6 +89,8 @@
       <workItem from="1653555301866" duration="3000" />
       <workItem from="1653572401922" duration="14155000" />
       <workItem from="1653641274133" duration="9029000" />
+      <workItem from="1653656447418" duration="460000" />
+      <workItem from="1653765561237" duration="7141000" />
     </task>
     <servers />
   </component>

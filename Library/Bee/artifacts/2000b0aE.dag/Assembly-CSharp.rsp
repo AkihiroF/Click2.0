@@ -369,6 +369,7 @@
 "Assets/Scripts/Tutorialscr.cs"
 "Assets/Scripts/TyanInteract.cs"
 "Assets/Scripts/Upmenu.cs"
+"Assets/Scripts/VideoMenu.cs"
 -langversion:9.0
 
 /deterministic

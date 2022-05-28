@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Saving\ObjSave.cs" />
      <Compile Include="Assets\Scripts\Tutorialscr.cs" />
      <Compile Include="Assets\Scripts\MainMenuButton.cs" />
+     <Compile Include="Assets\Scripts\VideoMenu.cs" />
      <Compile Include="Assets\Scripts\CreateVideo\ViborTheme.cs" />
      <Compile Include="Assets\Scripts\MovingExp.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

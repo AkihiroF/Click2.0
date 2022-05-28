@@ -51,7 +51,7 @@ public static class JsonSave
 
     private static string GetPath(string filename)
     {
-        return /*Path.Combine(Application.persistentDataPath, filename);*/ Application.dataPath + "/" + filename; 
+        return Path.Combine(Application.persistentDataPath, filename);
     }
 
     private static void WriteFile(string path, string content)

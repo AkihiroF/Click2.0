@@ -7,6 +7,7 @@ public class MainMenuButton : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject bodyMenu;
     public bool active;
+    [SerializeField] private bool dele;
 
     private void Start()
     {
@@ -23,6 +24,10 @@ public class MainMenuButton : MonoBehaviour, IPointerClickHandler
     {
         active = !active;
         StatusMenu();
+        if (dele)
+        {
+            Destroy(bodyMenu);
+        }
     }
     private void StatusMenu()
     {

@@ -10,12 +10,12 @@ public class ViborTheme : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI subsTex, moneyTex;
     public int subscribers, money;
-    public enum theme {Sport, Game, Movie, Music}
     private float time = 10, realtime;
     private bool active = false;
     public Image status;
     private int predvsub, predvmon;
     [SerializeField]private CreateData data;
+    [SerializeField] private VideoMenu menu;
 
     public void UPdateStatus(int sub, int mon, bool active, float realtime, int predsub, int predmon)
     {
@@ -31,90 +31,77 @@ public class ViborTheme : MonoBehaviour
         Debug.Log("Predsub = "+predsub);
     }
 
-    public void InputVid(int i)
+    
+    public void CreateVideo(int i)
     {
         if (active == false)
         {
+            realtime = 0;
+            int trend = Random.Range(0, 3);
+            menu.Activetemenu();
             switch (i)
             {
                 case 0:
-                    CreateVideo(theme.Game);
+                    if (trend == i)
+                    {
+                        predvmon = money.GetMoney(subscribers) * 2;
+                        predvsub = subscribers.GetSubsrib(data.objects[2].lvl, data.objects[3].lvl) * 2;
+                    }
+                    else
+                    {
+                        predvmon = money.GetMoney(subscribers);
+                        predvsub = subscribers.GetSubsrib(data.objects[2].lvl, data.objects[3].lvl);
+                    }
+
+                    active = true;
+                    data.UpdateStatusCreatVideo(subscribers, money, active, realtime, predvsub, predvmon);
                     break;
                 case 1:
-                    CreateVideo(theme.Movie);
+                    if (trend == i)
+                    {
+                        predvmon = money.GetMoney(subscribers) * 2;
+                        predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl) * 2;
+                    }
+                    else
+                    {
+                        predvmon = money.GetMoney(subscribers);
+                        predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl);
+                    }
+
+                    active = true;
+                    data.UpdateStatusCreatVideo(subscribers, money, active, realtime, predvsub, predvmon);
                     break;
                 case 2:
-                    CreateVideo(theme.Music);
+                    if (trend == i)
+                    {
+                        predvmon = money.GetMoney(subscribers) * 2;
+                        predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl) * 2;
+                    }
+                    else
+                    {
+                        predvmon = money.GetMoney(subscribers);
+                        predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl);
+                    }
+
+                    active = true;
+                    data.UpdateStatusCreatVideo(subscribers, money, active, realtime, predvsub, predvmon);
                     break;
                 case 3:
-                    CreateVideo(theme.Sport);
+                    if (trend == i)
+                    {
+                        predvmon = money.GetMoney(subscribers) * 2;
+                        predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl) * 2;
+                    }
+                    else
+                    {
+                        predvmon = money.GetMoney(subscribers);
+                        predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl);
+                    }
+
+                    active = true;
+                    data.UpdateStatusCreatVideo(subscribers, money, active, realtime, predvsub, predvmon);
                     break;
             }
-        }
-        Debug.Log(active);
-    }
-    public void CreateVideo(theme tema)
-    {
-        realtime = 0;
-        int trend = Random.Range(0, 3);
-        switch (tema)
-        {
-            case theme.Game:
-                if (trend == 0)
-                {
-                    predvmon = money.GetMoney(subscribers)*2;
-                    predvsub = subscribers.GetSubsrib(data.objects[2].lvl, data.objects[3].lvl) * 2;
-                }
-                else
-                {
-                    predvmon = money.GetMoney(subscribers);
-                    predvsub = subscribers.GetSubsrib(data.objects[2].lvl, data.objects[3].lvl);
-                }
-                active = true;
-                data.UpdateStatusCreatVideo(subscribers,money,active,realtime,predvsub,predvmon);
-                break;
-            case theme.Movie:
-                if (trend == 1)
-                {
-                    predvmon = money.GetMoney(subscribers)*2;
-                    predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl) * 2;
-                }
-                else
-                {
-                    predvmon = money.GetMoney(subscribers);
-                    predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl);
-                }
-                active = true;
-                data.UpdateStatusCreatVideo(subscribers,money,active,realtime,predvsub,predvmon);
-                break;
-            case theme.Music:
-                if (trend == 2)
-                {
-                    predvmon = money.GetMoney(subscribers)*2;
-                    predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl) * 2;
-                }
-                else
-                {
-                    predvmon = money.GetMoney(subscribers);
-                    predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl);
-                }
-                active = true;
-                data.UpdateStatusCreatVideo(subscribers,money,active,realtime,predvsub,predvmon);
-                break;
-            case theme.Sport:
-                if (trend == 3)
-                {
-                    predvmon = money.GetMoney(subscribers)*2;
-                    predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl) * 2;
-                }
-                else
-                {
-                    predvmon = money.GetMoney(subscribers);
-                    predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl);
-                }
-                active = true;
-                data.UpdateStatusCreatVideo(subscribers,money,active,realtime,predvsub,predvmon);
-                break;
         }
     }
 
