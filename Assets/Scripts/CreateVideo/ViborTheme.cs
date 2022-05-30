@@ -10,8 +10,8 @@ public class ViborTheme : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI subsTex, moneyTex;
     public int subscribers, money;
-    private float time = 10, realtime;
-    private bool active = false;
+    public float time = 10, realtime;
+    public bool active = false;
     public Image status;
     private int predvsub, predvmon;
     [SerializeField]private CreateData data;
@@ -28,7 +28,6 @@ public class ViborTheme : MonoBehaviour
         this.predvmon = predmon;
         this.predvsub = predsub;
         data.UpdateStatusCreatVideo(subscribers,money,active,realtime,predvsub,predvmon);
-        Debug.Log("Predsub = "+predsub);
     }
 
     
@@ -119,8 +118,6 @@ public class ViborTheme : MonoBehaviour
                 status.fillAmount = 0;
                 subscribers = predvsub;
                 money = predvmon;
-                predvmon = 0;
-                predvsub = 0;
                 UPdateStatus(subscribers, money,active,realtime,predvsub,predvmon);
             }
             

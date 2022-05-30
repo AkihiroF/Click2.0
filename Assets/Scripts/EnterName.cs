@@ -16,9 +16,11 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject InputNameMenu;
     [SerializeField] private List<Obj> startObj;
     public Tutorialscr tut;
+    private char[] chars = {'й','ц','у','к','е','н','г','ш','щ','з','х','ъ','ф','ы','в','а','п','р','о','л','д','ж',
+        'э','я','ч','с','м','и','т','ь','б','ю','ё'};
     private void Start()
     {
-        if (File.Exists(Application.dataPath + "/" + filename)){
+        if (File.Exists(Path.Combine(Application.persistentDataPath, filename))){
             data = Createdatabase();
             createdata.filename = filename;
             createdata.data = data;
@@ -56,14 +58,29 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            data = new();
-            data.namePlayer = nameperson;
-            JsonSave.SaveToJSON<DataBase>(data, filename);
-            createdata.filename = filename;
-            createdata.data = data;
-            createdata.objects = startObj;
-            createdata.EnterFile();
-            Destroy(InputNameMenu);
+            bool norm = true;
+            string prov = nameperson.ToLower();
+            for (int i = 0; i < chars.Length; i++)
+            {
+                if (prov.Contains(chars[i]))
+                {
+                    inputfield.text = "";
+                    norm = false;
+                    break;
+                }
+            }
+
+            if (norm)
+            {
+                data = new();
+                data.namePlayer = nameperson;
+                JsonSave.SaveToJSON<DataBase>(data, filename);
+                createdata.filename = filename;
+                createdata.data = data;
+                createdata.objects = startObj;
+                createdata.EnterFile();
+                Destroy(InputNameMenu);
+            }
         }
     }
     public DataBase Createdatabase()

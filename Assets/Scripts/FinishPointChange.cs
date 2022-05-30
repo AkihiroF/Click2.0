@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,8 @@ public class FinishPointChange : MonoBehaviour
     [SerializeField] private Image bar;
     [SerializeField] private RectTransform point;
     public float _value;
-    
+
+
     void Update()
     {
         _value = bar.fillAmount;

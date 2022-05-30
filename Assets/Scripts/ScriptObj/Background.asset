@@ -20,6 +20,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 29e708ead67310340ba5f97d66a30d49, type: 3}
   active: 0
   buy: 0
-  lvl: 0
+  lvl: 1
   stadia: 0
   id: 0
