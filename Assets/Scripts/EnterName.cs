@@ -20,7 +20,7 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
         'э','я','ч','с','м','и','т','ь','б','ю','ё'};
     private void Start()
     {
-        if (File.Exists(Path.Combine(Application.persistentDataPath, filename))){
+        if (File.Exists(Path.Combine(Application.streamingAssetsPath, filename))){
             data = Createdatabase();
             createdata.filename = filename;
             createdata.data = data;

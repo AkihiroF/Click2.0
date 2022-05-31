@@ -17,4 +17,15 @@ public static class MatchVideo
         money += sub % 40;
         return money;
     }
+
+    public static float GetTime(this float time, int comp)
+    {
+        if (time <= 300)
+        {
+            time += 30;
+        }
+
+        time -= comp % 40;
+        return time;
+    }
 }

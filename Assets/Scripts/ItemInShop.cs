@@ -48,9 +48,9 @@ public class ItemInShop : MonoBehaviour
 
     public void UpdateStartStatus()
     {
-        if (obj.active) button.GetComponentInChildren<TextMeshProUGUI>().text = "Upgrade";
         price = price.GetSubsrib(obj.lvl, obj.stadia);
-        lvltext.text = $"Lvl - {obj.lvl}\nPrice - {price}";
+        if (obj.active){ button.GetComponentInChildren<TextMeshProUGUI>().text = "Upgrade"; lvltext.text = $"Lvl - {obj.lvl}\nPrice - {price}";}
+        else {lvltext.text = $"Price - 1200";}
         statusicon.sprite = obj.upgradeicon[obj.stadia];
         objinroom.UpdateStatusObj();
         if(obj.buy) Destroy(block);

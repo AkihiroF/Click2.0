@@ -55,9 +55,9 @@ public class CreateData : MonoBehaviour
                 objects[i].buy = savingobject[i].active;
                 objects[i].lvl = savingobject[i].lvl;
                 objects[i].stadia = savingobject[i].stadia;
-                UpdateNextStat(objects[i]);
             }
             Objinshop[i].obj = objects[i];
+            UpdateNextStat(objects[i]);
             Objinshop[i].UpdateStartStatus();
             Objinshop[i].objinroom.UpdateStatusObj();
         }

@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 public class ViborTheme : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI subsTex, moneyTex;
+    [SerializeField] private TextMeshProUGUI subsTex, moneyTex, timetext;
     public int subscribers, money;
     public float time = 10, realtime;
     public bool active = false;
@@ -19,6 +19,7 @@ public class ViborTheme : MonoBehaviour
 
     public void UPdateStatus(int sub, int mon, bool active, float realtime, int predsub, int predmon)
     {
+        time = time.GetTime(data.objects[2].lvl);
         subscribers = sub;
         money = mon;
         subsTex.text = "" + subscribers;
