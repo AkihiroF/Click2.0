@@ -49,7 +49,7 @@ public static class JsonSave
 
     }
 
-    private static string GetPath(string filename)
+    public static string GetPath(string filename)
     {
         return Path.Combine(Application.streamingAssetsPath, filename);
     }
@@ -64,7 +64,7 @@ public static class JsonSave
         }
     }
 
-    private static string ReadFile(string path)
+    public static string ReadFile(string path)
     {
         if (File.Exists(path))
         {

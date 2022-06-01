@@ -14,12 +14,13 @@ public class CreateData : MonoBehaviour
     public List<Obj> objects;
     public List<ObjSave> savingobject;
     public ViborTheme viborTheme;
+    public Comment coments;
     public void EnterFile()
     {
-        
         savingobject = JsonSave.ReadListFromJSON<ObjSave>(filenameobj);
         upmenu.UpdateInfo(data);
         UpdateStatusLoading();
+        coments.StartComment();
     }
 
     public void UpdateStatusLoading(Obj obj)

@@ -10,4 +10,5 @@ public class DataBase
     public bool tutorial, active;
     public float statusprogres, realtime;
     public int predmon, predsub;
+    public int toptema;
 }

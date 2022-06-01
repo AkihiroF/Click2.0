@@ -19,7 +19,6 @@ public class ItemInRoom : MonoBehaviour
     {
         Start();
         int ind = dataobj.lvl / srez;
-        Debug.Log(ind);
         this.gameObject.SetActive(dataobj.active);
         if(ind <= icons.Count-1)this.gameObject.GetComponent<Image>().sprite = icons[ind];
     }

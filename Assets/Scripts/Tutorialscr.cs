@@ -20,8 +20,7 @@ public class Tutorialscr : MonoBehaviour
          }
          Destroy(tutorobj[activepage]);
          activepage++;
-         Debug.Log(activepage);
       }
-      if(activepage == tutorobj.Count) {data.data.tutorial = true; JsonSave.SaveToJSON(data.data, data.filename);Debug.Log("TutSuch");}
+      if(activepage == tutorobj.Count) {data.data.tutorial = true; JsonSave.SaveToJSON(data.data, data.filename);}
    }
 }
