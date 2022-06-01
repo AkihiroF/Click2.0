@@ -11,4 +11,5 @@ public class DataBase
     public float statusprogres, realtime;
     public int predmon, predsub;
     public int toptema;
+    public List<int> collcreate;
 }

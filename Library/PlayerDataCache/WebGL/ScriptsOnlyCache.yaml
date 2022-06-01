@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - ButtOn
+    - Comment
     - CreateData
     - EnterName
     - FinishPointChange
@@ -11,6 +12,7 @@ ScriptsOnlyBuild:
     - MovingExp
     - NextTutorial
     - Obj
+    - OnVideo
     - Tutorialscr
     - TyanInteract
     - Upmenu
@@ -200,27 +202,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5960}
     - Class: 114
-      Script: {instanceID: 6006}
+      Script: {instanceID: 5988}
     - Class: 114
-      Script: {instanceID: 6464}
+      Script: {instanceID: 6008}
     - Class: 114
-      Script: {instanceID: 6742}
+      Script: {instanceID: 6344}
     - Class: 114
-      Script: {instanceID: 6944}
+      Script: {instanceID: 6468}
     - Class: 114
-      Script: {instanceID: 7358}
+      Script: {instanceID: 6746}
     - Class: 114
-      Script: {instanceID: 7898}
+      Script: {instanceID: 6948}
     - Class: 114
-      Script: {instanceID: 8628}
+      Script: {instanceID: 7362}
     - Class: 114
-      Script: {instanceID: 8710}
+      Script: {instanceID: 7902}
     - Class: 114
-      Script: {instanceID: 9208}
+      Script: {instanceID: 8632}
     - Class: 114
-      Script: {instanceID: 9386}
+      Script: {instanceID: 8714}
     - Class: 114
-      Script: {instanceID: 9588}
+      Script: {instanceID: 9212}
+    - Class: 114
+      Script: {instanceID: 9390}
+    - Class: 114
+      Script: {instanceID: 9592}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -348,7 +354,7 @@ ScriptsOnlyBuild:
     className: CinemachinePixelPerfect
   - hash:
       serializedVersion: 2
-      Hash: 9ec043cc38910557ded2cf762ee61879
+      Hash: a92930c9171e1fdcd3ef15a92c3b76a6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CreateData
@@ -852,10 +858,16 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionEnter2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 99413513b85425f2169e20b4a85fa02f
+      Hash: 7789dbfdda52b806f49678e8ab0c340a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnterName
+  - hash:
+      serializedVersion: 2
+      Hash: 486a31b545ca6fbc787b91ae0b1b6b3b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Comment
   - hash:
       serializedVersion: 2
       Hash: 300fd99066f8c288e85f5e81ce65fe34
@@ -892,6 +904,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnDeselectMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: d5606d8252fb2f0c5c4cc4fa3f86520e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OnVideo
   - hash:
       serializedVersion: 2
       Hash: 699619b86d9359741a4f58540298c80b
@@ -1206,7 +1224,7 @@ ScriptsOnlyBuild:
     className: SpriteLibrarySourceAsset
   - hash:
       serializedVersion: 2
-      Hash: 8259f57964e18edc74062dd5d54a38e1
+      Hash: 0a9b4d741449a9fa15f29bae11ea0698
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ViborTheme
@@ -1224,7 +1242,7 @@ ScriptsOnlyBuild:
     className: UnityOnToggleValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: eebf573f0d60d825aa0f9c35f1d89d91
+      Hash: a329e7206542afd2b9a02699ff49c694
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovingExp
