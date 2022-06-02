@@ -388,6 +388,7 @@
 "Assets/Scripts/Saving/DataBase.cs"
 "Assets/Scripts/Saving/JsonSave.cs"
 "Assets/Scripts/Saving/ObjSave.cs"
+"Assets/Scripts/Star.cs"
 "Assets/Scripts/Tutorialscr.cs"
 "Assets/Scripts/TyanInteract.cs"
 "Assets/Scripts/Upmenu.cs"

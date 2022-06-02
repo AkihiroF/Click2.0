@@ -14,13 +14,11 @@ public class CreateData : MonoBehaviour
     public List<Obj> objects;
     public List<ObjSave> savingobject;
     public ViborTheme viborTheme;
-    public Comment coments;
     public void EnterFile()
     {
         savingobject = JsonSave.ReadListFromJSON<ObjSave>(filenameobj);
         upmenu.UpdateInfo(data);
         UpdateStatusLoading();
-        coments.StartComment();
     }
 
     public void UpdateStatusLoading(Obj obj)
@@ -36,12 +34,10 @@ public class CreateData : MonoBehaviour
         JsonSave.SaveToJSON(savingobject,filenameobj);
     }
 
-    public void UpdateStatusCreatVideo(int sub, int mon, bool active, float realtime, int predsub, int predmon)
+    public void UpdateStatusCreatVideo(int sub, int mon,int predsub, int predmon)
     {
         data.subscribers = sub;
-        data.active = active;
         data.money = mon;
-        data.realtime = realtime;
         data.predmon = predmon;
         data.predsub = predsub;
         JsonSave.SaveToJSON(data, filename);
@@ -62,7 +58,7 @@ public class CreateData : MonoBehaviour
             Objinshop[i].UpdateStartStatus();
             Objinshop[i].objinroom.UpdateStatusObj();
         }
-        viborTheme.UPdateStatus(data.subscribers, data.money, data.active, data.realtime, data.predsub, data.predmon);
+        viborTheme.UPdateStatus(data.subscribers, data.money, data.predsub, data.predmon);
     }
 
     public void UpdateStatusSaving()

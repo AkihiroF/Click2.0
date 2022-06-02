@@ -416,57 +416,57 @@
       "DebugActionIndex": 0
     },
     {
-      "Annotation": "CopyFiles C:/Users/AkihiroF/Desktop/Test/StreamingAssets/comm1.txt",
+      "Annotation": "CopyFiles C:/Users/AkihiroF/Desktop/Test/StreamingAssets/Fuck.txt",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "Assets/StreamingAssets/comm1.txt"
+        "Assets/StreamingAssets/Fuck.txt"
       ],
       "Outputs": [
-        "C:/Users/AkihiroF/Desktop/Test/StreamingAssets/comm1.txt"
+        "C:/Users/AkihiroF/Desktop/Test/StreamingAssets/Fuck.txt"
       ],
       "DebugActionIndex": 1
     },
     {
-      "Annotation": "CopyFiles C:/Users/AkihiroF/Desktop/Test/StreamingAssets/comm2.txt",
+      "Annotation": "CopyFiles C:/Users/AkihiroF/Desktop/Test/StreamingAssets/Game.txt",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "Assets/StreamingAssets/comm2.txt"
+        "Assets/StreamingAssets/Game.txt"
       ],
       "Outputs": [
-        "C:/Users/AkihiroF/Desktop/Test/StreamingAssets/comm2.txt"
+        "C:/Users/AkihiroF/Desktop/Test/StreamingAssets/Game.txt"
       ],
       "DebugActionIndex": 2
     },
     {
-      "Annotation": "CopyFiles C:/Users/AkihiroF/Desktop/Test/StreamingAssets/comm3.txt",
+      "Annotation": "CopyFiles C:/Users/AkihiroF/Desktop/Test/StreamingAssets/Movie.txt",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "Assets/StreamingAssets/comm3.txt"
+        "Assets/StreamingAssets/Movie.txt"
       ],
       "Outputs": [
-        "C:/Users/AkihiroF/Desktop/Test/StreamingAssets/comm3.txt"
+        "C:/Users/AkihiroF/Desktop/Test/StreamingAssets/Movie.txt"
       ],
       "DebugActionIndex": 3
     },
     {
-      "Annotation": "CopyFiles C:/Users/AkihiroF/Desktop/Test/StreamingAssets/DataBase.json",
+      "Annotation": "CopyFiles C:/Users/AkihiroF/Desktop/Test/StreamingAssets/Music.txt",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "Assets/StreamingAssets/DataBase.json"
+        "Assets/StreamingAssets/Music.txt"
       ],
       "Outputs": [
-        "C:/Users/AkihiroF/Desktop/Test/StreamingAssets/DataBase.json"
+        "C:/Users/AkihiroF/Desktop/Test/StreamingAssets/Music.txt"
       ],
       "DebugActionIndex": 4
     },
     {
-      "Annotation": "CopyFiles C:/Users/AkihiroF/Desktop/Test/StreamingAssets/stat.json",
+      "Annotation": "CopyFiles C:/Users/AkihiroF/Desktop/Test/StreamingAssets/Sport.txt",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "Assets/StreamingAssets/stat.json"
+        "Assets/StreamingAssets/Sport.txt"
       ],
       "Outputs": [
-        "C:/Users/AkihiroF/Desktop/Test/StreamingAssets/stat.json"
+        "C:/Users/AkihiroF/Desktop/Test/StreamingAssets/Sport.txt"
       ],
       "DebugActionIndex": 5
     },

@@ -35,7 +35,7 @@ public class ItemInShop : MonoBehaviour
                         lvltext.text = $"Lvl - {obj.lvl}\nPrice - {price}";
                     }
                     statusicon.sprite = obj.upgradeicon[obj.stadia];
-                    price = price.GetSubsrib(obj.lvl, obj.stadia);
+                    price = price.GetUpdate((obj.lvl * 3) + obj.stadia);
                 }
             }
         }
@@ -48,7 +48,7 @@ public class ItemInShop : MonoBehaviour
 
     public void UpdateStartStatus()
     {
-        price = price.GetSubsrib(obj.lvl, obj.stadia);
+        price = price.GetUpdate((obj.lvl * 3) + obj.stadia);
         if (obj.active){ button.GetComponentInChildren<TextMeshProUGUI>().text = "Upgrade"; lvltext.text = $"Lvl - {obj.lvl}\nPrice - {price}";}
         else {lvltext.text = $"Price - 1200";}
         statusicon.sprite = obj.upgradeicon[obj.stadia];

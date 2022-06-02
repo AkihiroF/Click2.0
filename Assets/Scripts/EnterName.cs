@@ -15,19 +15,13 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI inputfield;
     [SerializeField] private GameObject InputNameMenu;
     [SerializeField] private List<Obj> startObj;
-    private string stat = "stat.json";
     public Tutorialscr tut;
     private char[] chars = {'й','ц','у','к','е','н','г','ш','щ','з','х','ъ','ф','ы','в','а','п','р','о','л','д','ж',
         'э','я','ч','с','м','и','т','ь','б','ю','ё'};
     private void Start()
     {
-        if (File.Exists(Path.Combine(Application.streamingAssetsPath, filename))){
+        if (File.Exists(JsonSave.GetPath(filename))){
             data = Createdatabase();
-            List<Statt> st = JsonSave.ReadListFromJSON<Statt>(stat);
-            for (int i = 0; i < st.Count; i++)
-            {
-                data.collcreate.Add(st[i].stt);
-            }
             createdata.filename = filename;
             createdata.data = data;
             createdata.objects = startObj;
@@ -82,17 +76,6 @@ public class EnterName : MonoBehaviour, IPointerClickHandler
                 data.namePlayer = nameperson;
                 JsonSave.SaveToJSON<DataBase>(data, filename);
                 createdata.filename = filename;
-                List<int> stt = new List<int>(4);
-                List<Statt> statt = new List<Statt>(4);
-                for (int i = 0;i < 4; i++)
-                {
-                    Statt st = new();
-                    st.stt = 0;
-                    stt.Add(0);
-                    statt.Add(st);
-                }
-                data.collcreate = stt;
-                JsonSave.SaveToJSON(statt, stat);
                 createdata.data = data;
                 createdata.objects = startObj;
                 createdata.EnterFile();

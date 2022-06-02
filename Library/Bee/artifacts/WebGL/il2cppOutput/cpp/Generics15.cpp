@@ -79,8 +79,6 @@ struct IEqualityComparer_1_tDACC7D28FFD11A83A9FC39CC18863F52A3E7E88F;
 struct IEqualityComparer_1_tDBFC8496F14612776AF930DBF84AFE7D06D1F0E9;
 // System.Collections.Generic.IEqualityComparer`1<UnityEngine.UIElements.StylePropertyAnimationSystem/ElementPropertyPair>
 struct IEqualityComparer_1_tF175EE4608832085A0EE2A97DAE545B83F097888;
-// JsonHelper/Inventory`1<System.Int32>
-struct Inventory_1_t04558CEC0AE9D2FCB4470CCCEAF780F8BED118B8;
 // JsonHelper/Inventory`1<System.Object>
 struct Inventory_1_tF5DED6BD94719AA9F7CDFEC73D8E0D119E1415D3;
 // UnityEngine.Events.InvokableCall`1<System.Boolean>
@@ -724,13 +722,6 @@ struct Dictionary_2_t4B29EB34D6BDD7CF67CE77D60AC718EB61186713  : public RuntimeO
 	ValueCollection_tDF1EC77C37E6E161D53DE980D34DC4ED6B468EDC* ____values_8;
 	// System.Object System.Collections.Generic.Dictionary`2::_syncRoot
 	RuntimeObject* ____syncRoot_9;
-};
-
-// JsonHelper/Inventory`1<System.Int32>
-struct Inventory_1_t04558CEC0AE9D2FCB4470CCCEAF780F8BED118B8  : public RuntimeObject
-{
-	// T[] JsonHelper/Inventory`1::Items
-	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___Items_0;
 };
 
 // JsonHelper/Inventory`1<System.Object>
@@ -33983,22 +33974,6 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 	RuntimeObject* _returnValue;
 	_returnValue = InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mD5E4050FF13D9EF44097F3E0065CE1DE21AF4D7A(_thisAdjusted, method);
 	return _returnValue;
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void JsonHelper/Inventory`1<System.Int32>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Inventory_1__ctor_mBC1463EB0307237449F5BD92FD66B1449A40F369_gshared (Inventory_1_t04558CEC0AE9D2FCB4470CCCEAF780F8BED118B8* __this, const RuntimeMethod* method) 
-{
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
-		return;
-	}
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

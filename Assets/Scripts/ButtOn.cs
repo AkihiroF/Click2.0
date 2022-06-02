@@ -13,10 +13,7 @@ public class ButtOn : MonoBehaviour, IPointerClickHandler
     {
         if (a.button == PointerEventData.InputButton.Left)
         {
-            if (video.active)
-            {
-                CreateEx();
-            }
+            CreateEx();
         }
     }
     private void CreateEx()

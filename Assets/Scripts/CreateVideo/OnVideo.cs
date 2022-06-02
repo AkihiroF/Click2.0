@@ -24,7 +24,10 @@ public class OnVideo : MonoBehaviour
         if (realtime >= time)
         {
             vibor.DeleteVid();
-            Destroy(this.gameObject);
+            time = 0;
+            realtime = 0;
+            status.fillAmount = 0;
+            this.gameObject.SetActive(false);
         }
 
     }

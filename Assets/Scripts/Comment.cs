@@ -4,30 +4,34 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using System.IO;
 
 public class Comment : MonoBehaviour
 {
     [SerializeField]private List<string> sourses;
     private List<List<string>> comment = new();
     [SerializeField] private GameObject osnova, position;
-    public string osnovacomm;
     [SerializeField] private CreateData data;
     [Header("Setings comment")]
     [SerializeField] private int items;
-    public void StartComment()
+    public void StartComment(int osnovacomm)
     {
         for (int i = 0; i < sourses.Count; i++)
         {
             comment.Add(ReadComFromFile(sourses[i]));
         }
 
-        for (int i = 0; i < sourses.Count; i++)
+        foreach (Transform child in position.transform)
         {
-            if (comment[i][0] == osnovacomm)
+            Destroy(child.gameObject);
+        }
+        {
+            for (int i = 0; i < position.transform.childCount; i++)
             {
-                InputComm(i);
+                Destroy(position.transform.GetChild(i));
             }
         }
+        InputComm(osnovacomm);
     }
 
     private void InputComm(int thema)
@@ -38,24 +42,23 @@ public class Comment : MonoBehaviour
             if (i <= 2)
             {
                 outputcomm.Add(comment[thema][Random.Range(1, comment[thema].Count)]);
-                Debug.Log(outputcomm[i]);
             }
             else
             {
-                outputcomm.Add(comment[Random.Range(0,sourses.Count)][Random.Range(1,10)]);
+                outputcomm.Add(comment[Random.Range(1,sourses.Count)][Random.Range(1,4)]);
             }
         }
 
         for (int i = 0; i < items; i++)
         {
-            CreateCommBody(outputcomm[Random.Range(0, outputcomm.Count)]);
+            CreateCommBody(outputcomm[Random.Range(1, outputcomm.Count)]);
         }
     }
 
     private List<string> ReadComFromFile(string source)
     {
-        string startcomm = JsonSave.ReadFile(JsonSave.GetPath(source));
-        string[] arraycomm = startcomm.Split('.');
+        string startcomm = JsonSave.ReadFile(Path.Combine(Application.streamingAssetsPath, source));
+        string[] arraycomm = startcomm.Split('\n');
         List<string> list = new List<string>();
         for (int i = 0; i < arraycomm.Length; i++)
         {
@@ -70,6 +73,7 @@ public class Comment : MonoBehaviour
         Transform clone = Instantiate(osnova).transform;
         clone.SetParent(position.transform);
         clone.GetComponentInChildren<TextMeshProUGUI>().text = text;
+        clone.localScale = new Vector3(1, 1, 1);
         clone.gameObject.SetActive(true);
     }
 }

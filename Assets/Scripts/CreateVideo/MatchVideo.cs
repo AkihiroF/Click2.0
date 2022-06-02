@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 [Serializable]
 public static class MatchVideo
 {
@@ -14,7 +16,7 @@ public static class MatchVideo
 
     public static int GetMoney(this int money, int sub)
     {
-        money += sub % 40;
+        money += sub % 10;
         return money;
     }
 
@@ -27,5 +29,17 @@ public static class MatchVideo
 
         time -= comp % 40;
         return time;
+    }
+
+    public static int GetUpdate(this int value, int stadia)
+    {
+        value += (stadia * 15) % 70;
+        return value;
+    }
+
+    public static int GetToptem(this int val)
+    {
+        val = Random.Range(0, 4);
+        return val;
     }
 }

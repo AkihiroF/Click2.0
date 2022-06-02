@@ -1,37 +1,56 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using Random = UnityEngine.Random;
+
 
 public class ViborTheme : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI subsTex, moneyTex, timetext;
-    public int subscribers, money;
-    public float time = 10, realtime;
-    public bool active = false;
+    [SerializeField] private TextMeshProUGUI subsTex, moneyTex;
+    private int subscribers, money;
+    private bool active;
     private int predvsub, predvmon;
-    [SerializeField] private GameObject obrazec;
     [SerializeField]private CreateData data;
     [SerializeField] private VideoMenu menu;
+    private List<Statt> time = new List<Statt>();
+    private string namefile = "stat.json";
+    [SerializeField] private Comment coments;
+    private int toptema;
+    [SerializeField]private List<Star> xtwo;
     [Header("Rooms")]
-    [SerializeField] private List<Sprite> backgrounds;
-    
+    [SerializeField] private List<GameObject> backgrounds;
 
-    public void UPdateStatus(int sub, int mon, bool active, float realtime, int predsub, int predmon)
+
+    private void Start()
     {
-        time = time.GetTime(data.objects[2].lvl);
+        if (File.Exists(JsonSave.GetPath(namefile)))
+        {
+            time = JsonSave.ReadListFromJSON<Statt>(namefile);
+        }
+        else
+        {
+            for (int i = 0; i < backgrounds.Count; i++)
+            {
+                Statt st = new Statt();
+                st.stt = 0;
+                st.time = 10;
+                time.Add(st);
+            }
+            JsonSave.SaveToJSON(time, namefile);
+        }
+    }
+
+    public void UPdateStatus(int sub, int mon, int predsub, int predmon)
+    {
         subscribers = sub;
         money = mon;
         subsTex.text = "" + subscribers;
         moneyTex.text = "" + money;
-        this.active = active;
-        this.realtime = realtime;
         this.predvmon = predmon;
         this.predvsub = predsub;
-        data.UpdateStatusCreatVideo(subscribers,money,active,realtime,predvsub,predvmon);
+        data.UpdateStatusCreatVideo(subscribers,money,predvsub,predvmon);
+        
     }
 
     
@@ -39,13 +58,15 @@ public class ViborTheme : MonoBehaviour
     {
         if (active == false)
         {
-            realtime = 0;
             menu.Activetemenu();
-            CreateScene(backgrounds[i],time, 0);
+            time[i].stt++;
+            time[i].time = time[i].time.GetTime(data.objects[1].lvl);
+            CreateScene(backgrounds[i],time[i].time);
+            coments.StartComment(i);
             switch (i)
             {
                 case 0:
-                    if (data.data.toptema == i)
+                    if (toptema == i)
                     {
                         predvmon = money.GetMoney(subscribers) * 2;
                         predvsub = subscribers.GetSubsrib(data.objects[2].lvl, data.objects[3].lvl) * 2;
@@ -55,13 +76,11 @@ public class ViborTheme : MonoBehaviour
                         predvmon = money.GetMoney(subscribers);
                         predvsub = subscribers.GetSubsrib(data.objects[2].lvl, data.objects[3].lvl);
                     }
-
-                    data.data.collcreate[i]++;
                     active = true;
-                    data.UpdateStatusCreatVideo(subscribers, money, active, realtime, predvsub, predvmon);
+                    data.UpdateStatusCreatVideo(subscribers, money, predvsub, predvmon);
                     break;
                 case 1:
-                    if (data.data.toptema == i)
+                    if (toptema == i)
                     {
                         predvmon = money.GetMoney(subscribers) * 2;
                         predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl) * 2;
@@ -71,13 +90,11 @@ public class ViborTheme : MonoBehaviour
                         predvmon = money.GetMoney(subscribers);
                         predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl);
                     }
-                    data.data.collcreate[i]++;
                     active = true;
-                    data.UpdateStatusCreatVideo(subscribers, money, active, realtime, predvsub, predvmon);
+                    data.UpdateStatusCreatVideo(subscribers, money, predvsub, predvmon);
                     break;
                 case 2:
-                    data.data.collcreate[i]++;
-                    if (data.data.toptema == i)
+                    if (toptema == i)
                     {
                         predvmon = money.GetMoney(subscribers) * 2;
                         predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl) * 2;
@@ -87,13 +104,11 @@ public class ViborTheme : MonoBehaviour
                         predvmon = money.GetMoney(subscribers);
                         predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl);
                     }
-
                     active = true;
-                    data.UpdateStatusCreatVideo(subscribers, money, active, realtime, predvsub, predvmon);
+                    data.UpdateStatusCreatVideo(subscribers, money, predvsub, predvmon);
                     break;
                 case 3:
-                    data.data.collcreate[i]++;
-                    if (data.data.toptema == i)
+                    if (toptema == i)
                     {
                         predvmon = money.GetMoney(subscribers) * 2;
                         predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl) * 2;
@@ -103,11 +118,14 @@ public class ViborTheme : MonoBehaviour
                         predvmon = money.GetMoney(subscribers);
                         predvsub = subscribers.GetSubsrib(data.objects[3].lvl, data.objects[4].lvl);
                     }
-
                     active = true;
-                    data.UpdateStatusCreatVideo(subscribers, money, active, realtime, predvsub, predvmon);
+                    data.UpdateStatusCreatVideo(subscribers, money, predvsub, predvmon);
                     break;
             }
+            if (xtwo[toptema].act) xtwo[toptema].InputStar();
+            toptema = toptema.GetToptem();
+            xtwo[toptema].InputStar();
+            Debug.Log(toptema);
         }
     }
 
@@ -116,20 +134,19 @@ public class ViborTheme : MonoBehaviour
         subscribers = predvsub;
         money = predvmon;
         active = false;
-        UPdateStatus(subscribers, money,active,realtime,predvsub,predvmon);
+        JsonSave.SaveToJSON(time,namefile);
+        UPdateStatus(subscribers, money,predvsub,predvmon);
     }
 
-    private void CreateScene(Sprite back, float time, float realt)
+    private void CreateScene(GameObject body,float time)
     {
-        Transform body = Instantiate(obrazec, this.transform.parent).transform;
-        body.GetComponent<Image>().sprite = back;
-        body.GetComponent<OnVideo>().realtime = realt;
         body.GetComponent<OnVideo>().time = time;
-        body.gameObject.SetActive(true);
+        body.SetActive(true);
     }
 }
 [Serializable]
 public class Statt
 {
+    public float time;
     public int stt;
 }
