@@ -58,11 +58,13 @@
      <Compile Include="Assets\Scripts\Saving\ObjSave.cs" />
      <Compile Include="Assets\Scripts\CreateVideo\OnVideo.cs" />
      <Compile Include="Assets\Scripts\Tutorialscr.cs" />
+     <Compile Include="Assets\Scripts\Star.cs" />
      <Compile Include="Assets\Scripts\MainMenuButton.cs" />
      <Compile Include="Assets\Scripts\VideoMenu.cs" />
      <Compile Include="Assets\Scripts\CreateVideo\ViborTheme.cs" />
      <Compile Include="Assets\Scripts\MovingExp.cs" />
-     <Compile Include="Assets\Scripts\Star.cs" />
+     <Compile Include="Assets\Scripts\ExitGame.cs" />
+     <Compile Include="Assets\Scripts\Music.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\StreamingAssets\Music.txt" />

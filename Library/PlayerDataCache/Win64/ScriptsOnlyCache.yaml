@@ -5,11 +5,13 @@ ScriptsOnlyBuild:
     - Comment
     - CreateData
     - EnterName
+    - ExitGame
     - FinishPointChange
     - ItemInRoom
     - ItemInShop
     - MainMenuButton
     - MovingExp
+    - Music
     - NextTutorial
     - Obj
     - OnVideo
@@ -64,6 +66,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Mask
     - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
     Assembly-CSharp:
@@ -105,8 +108,12 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.ScrollRect/ScrollRectEvent
+    - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: Music
+    methodName: InputVolume
   - assembly: Assembly-CSharp
     fullTypeName: ViborTheme
     methodName: CreateVideo
@@ -135,6 +142,9 @@ ScriptsOnlyBuild:
     fullTypeName: ItemInShop
     methodName: UpdateStatus
   - assembly: Assembly-CSharp
+    fullTypeName: MainMenuButton
+    methodName: ActiveMenu
+  - assembly: Assembly-CSharp
     fullTypeName: ItemInShop
     methodName: UpdateStatus
   - assembly: Assembly-CSharp
@@ -157,6 +167,10 @@ ScriptsOnlyBuild:
     - Class: 49
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -201,6 +215,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5758}
     - Class: 114
+      Script: {instanceID: 5896}
+    - Class: 114
       Script: {instanceID: 5960}
     - Class: 114
       Script: {instanceID: 5988}
@@ -215,21 +231,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6948}
     - Class: 114
-      Script: {instanceID: 7362}
+      Script: {instanceID: 7134}
     - Class: 114
-      Script: {instanceID: 7902}
+      Script: {instanceID: 7364}
     - Class: 114
-      Script: {instanceID: 8632}
+      Script: {instanceID: 7904}
     - Class: 114
-      Script: {instanceID: 8714}
+      Script: {instanceID: 8634}
     - Class: 114
-      Script: {instanceID: 9212}
+      Script: {instanceID: 8716}
     - Class: 114
-      Script: {instanceID: 9390}
+      Script: {instanceID: 9214}
     - Class: 114
-      Script: {instanceID: 9592}
+      Script: {instanceID: 9392}
     - Class: 114
-      Script: {instanceID: 68424}
+      Script: {instanceID: 9594}
+    - Class: 114
+      Script: {instanceID: 33556}
+    - Class: 114
+      Script: {instanceID: 41162}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -245,6 +265,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -357,7 +383,7 @@ ScriptsOnlyBuild:
     className: CinemachinePixelPerfect
   - hash:
       serializedVersion: 2
-      Hash: 01e45bcc4c36bdc03d52bc39405d5475
+      Hash: 3deb21b69216e3cd4378ce03435cb8eb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CreateData
@@ -861,7 +887,7 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionEnter2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: b126709dc988f62b360862accb1ecdbc
+      Hash: 12ad09efc96ba8a766555b5565c9dd71
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnterName
@@ -955,6 +981,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 2ddd27055815a260bb33986ea8656b9a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Star
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1143,7 +1175,7 @@ ScriptsOnlyBuild:
     className: UnityOnMoveMessageListener
   - hash:
       serializedVersion: 2
-      Hash: a5e6640be26c015bd3995894b2d1fac1
+      Hash: ff5da6b6e9534b817c5e0ced5107d573
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenuButton
@@ -1275,10 +1307,16 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 2ddd27055815a260bb33986ea8656b9a
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Star
+    className: ExitGame
+  - hash:
+      serializedVersion: 2
+      Hash: 54be26192ff49b5a76ef59f579e7983e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Music
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main.unity

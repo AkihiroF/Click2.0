@@ -8,7 +8,7 @@ public class DataBase
     public string namePlayer;
     public int money, subscribers;
     public bool tutorial, active;
-    public float statusprogres, realtime;
+    public float volume, realtime;
     public int predmon, predsub;
     public int toptema;
 }

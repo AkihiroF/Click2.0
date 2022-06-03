@@ -14,8 +14,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Comment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreateVideo/OnVideo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreateVideo/ViborTheme.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ExitGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemInRoom.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemInShop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Music.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NextTutorial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obj.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Saving/ObjSave.cs" root0="FORCE_HIGHLIGHTING" />
@@ -106,7 +108,8 @@
       <workItem from="1653987467422" duration="4841000" />
       <workItem from="1654070397469" duration="14611000" />
       <workItem from="1654087128384" duration="8843000" />
-      <workItem from="1654162855894" duration="24415000" />
+      <workItem from="1654162855894" duration="24580000" />
+      <workItem from="1654245909014" duration="7320000" />
     </task>
     <servers />
   </component>

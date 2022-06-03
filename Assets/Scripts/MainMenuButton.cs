@@ -8,6 +8,7 @@ public class MainMenuButton : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject bodyMenu;
     public bool active;
     [SerializeField] private bool dele;
+    [SerializeField] private Music music;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class MainMenuButton : MonoBehaviour, IPointerClickHandler
     {
         active = !active;
         StatusMenu();
+        music.StartPlayMusic(0);
         if (dele)
         {
             Destroy(bodyMenu);

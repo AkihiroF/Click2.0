@@ -58,6 +58,7 @@ public class ViborTheme : MonoBehaviour
     {
         if (active == false)
         {
+            data.music.StartPlayMusic(0);
             menu.Activetemenu();
             time[i].stt++;
             time[i].time = time[i].time.GetTime(data.objects[1].lvl);
@@ -136,6 +137,7 @@ public class ViborTheme : MonoBehaviour
         active = false;
         JsonSave.SaveToJSON(time,namefile);
         UPdateStatus(subscribers, money,predvsub,predvmon);
+        data.music.StartPlayMusic(0);
     }
 
     private void CreateScene(GameObject body,float time)
