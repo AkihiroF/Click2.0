@@ -27,7 +27,7 @@ public static class MatchVideo
             time += 30;
         }
 
-        time -= comp % 40;
+        time -= comp % 350;
         return time;
     }
 

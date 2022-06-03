@@ -43,6 +43,7 @@ public class CreateData : MonoBehaviour
         data.predmon = predmon;
         data.predsub = predsub;
         JsonSave.SaveToJSON(data, filename);
+        upmenu.UpdateInfo(data);
     }
     public void UpdateStatusLoading()
     {

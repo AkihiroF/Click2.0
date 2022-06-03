@@ -189,67 +189,67 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3104}
     - Class: 114
-      Script: {instanceID: 3388}
+      Script: {instanceID: 3138}
     - Class: 114
-      Script: {instanceID: 3464}
+      Script: {instanceID: 3390}
     - Class: 114
-      Script: {instanceID: 3698}
+      Script: {instanceID: 3466}
     - Class: 114
-      Script: {instanceID: 4440}
+      Script: {instanceID: 3700}
     - Class: 114
-      Script: {instanceID: 4652}
+      Script: {instanceID: 4442}
     - Class: 114
-      Script: {instanceID: 4726}
+      Script: {instanceID: 4654}
     - Class: 114
-      Script: {instanceID: 4750}
+      Script: {instanceID: 4728}
     - Class: 114
-      Script: {instanceID: 4786}
+      Script: {instanceID: 4752}
     - Class: 114
-      Script: {instanceID: 5086}
+      Script: {instanceID: 4788}
     - Class: 114
-      Script: {instanceID: 5308}
+      Script: {instanceID: 5088}
     - Class: 114
-      Script: {instanceID: 5352}
+      Script: {instanceID: 5168}
     - Class: 114
-      Script: {instanceID: 5392}
+      Script: {instanceID: 5312}
     - Class: 114
-      Script: {instanceID: 5758}
+      Script: {instanceID: 5356}
     - Class: 114
-      Script: {instanceID: 5896}
+      Script: {instanceID: 5396}
     - Class: 114
-      Script: {instanceID: 5960}
+      Script: {instanceID: 5762}
     - Class: 114
-      Script: {instanceID: 5988}
+      Script: {instanceID: 5900}
     - Class: 114
-      Script: {instanceID: 6008}
+      Script: {instanceID: 5964}
     - Class: 114
-      Script: {instanceID: 6344}
+      Script: {instanceID: 5992}
     - Class: 114
-      Script: {instanceID: 6468}
+      Script: {instanceID: 6012}
     - Class: 114
-      Script: {instanceID: 6746}
+      Script: {instanceID: 6348}
     - Class: 114
-      Script: {instanceID: 6948}
+      Script: {instanceID: 6472}
     - Class: 114
-      Script: {instanceID: 7134}
+      Script: {instanceID: 6750}
     - Class: 114
-      Script: {instanceID: 7364}
+      Script: {instanceID: 6952}
     - Class: 114
-      Script: {instanceID: 7904}
+      Script: {instanceID: 7138}
     - Class: 114
-      Script: {instanceID: 8634}
+      Script: {instanceID: 7368}
     - Class: 114
-      Script: {instanceID: 8716}
+      Script: {instanceID: 7908}
     - Class: 114
-      Script: {instanceID: 9214}
+      Script: {instanceID: 8638}
     - Class: 114
-      Script: {instanceID: 9392}
+      Script: {instanceID: 8720}
     - Class: 114
-      Script: {instanceID: 9594}
+      Script: {instanceID: 9218}
     - Class: 114
-      Script: {instanceID: 33556}
+      Script: {instanceID: 9396}
     - Class: 114
-      Script: {instanceID: 41162}
+      Script: {instanceID: 9598}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -293,7 +293,7 @@ ScriptsOnlyBuild:
     className: SpriteSkin
   - hash:
       serializedVersion: 2
-      Hash: f36c26f9e3ee213aefc61bfe159ab9c8
+      Hash: c3c0fedb25a676c2399128a87fad585d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Upmenu
@@ -471,6 +471,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 54be26192ff49b5a76ef59f579e7983e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Music
   - hash:
       serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
@@ -765,6 +771,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Tilemap.Extras.dll
     namespaceName: UnityEngine.Tilemaps
     className: AnimatedTile
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ExitGame
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1175,7 +1187,7 @@ ScriptsOnlyBuild:
     className: UnityOnMoveMessageListener
   - hash:
       serializedVersion: 2
-      Hash: ff5da6b6e9534b817c5e0ced5107d573
+      Hash: 3b62c95ce00e6f8011c6708d1ca0e6bb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenuButton
@@ -1305,19 +1317,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ExitGame
-  - hash:
-      serializedVersion: 2
-      Hash: 54be26192ff49b5a76ef59f579e7983e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Music
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main.unity
-  playerPath: C:/Users/AkihiroF/Desktop/Test/Ttte.exe
+  playerPath: C:/Users/AkihiroF/Desktop/Test/AnimeBloger.exe

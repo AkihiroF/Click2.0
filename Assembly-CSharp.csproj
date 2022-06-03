@@ -44,12 +44,14 @@
      <Compile Include="Assets\Scripts\Upmenu.cs" />
      <Compile Include="Assets\Scripts\Saving\CreateData.cs" />
      <Compile Include="Assets\Scripts\Saving\DataBase.cs" />
+     <Compile Include="Assets\Scripts\Music.cs" />
      <Compile Include="Assets\Scripts\ButtOn.cs" />
      <Compile Include="Assets\Scripts\FinishPointChange.cs" />
      <Compile Include="Assets\Scripts\ItemInShop.cs" />
      <Compile Include="Assets\Scripts\TyanInteract.cs" />
      <Compile Include="Assets\Scripts\Saving\JsonSave.cs" />
      <Compile Include="Assets\Scripts\CreateVideo\MatchVideo.cs" />
+     <Compile Include="Assets\Scripts\ExitGame.cs" />
      <Compile Include="Assets\Scripts\NextTutorial.cs" />
      <Compile Include="Assets\Scripts\Obj.cs" />
      <Compile Include="Assets\Scripts\ItemInRoom.cs" />
@@ -63,8 +65,6 @@
      <Compile Include="Assets\Scripts\VideoMenu.cs" />
      <Compile Include="Assets\Scripts\CreateVideo\ViborTheme.cs" />
      <Compile Include="Assets\Scripts\MovingExp.cs" />
-     <Compile Include="Assets\Scripts\ExitGame.cs" />
-     <Compile Include="Assets\Scripts\Music.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\StreamingAssets\Music.txt" />
